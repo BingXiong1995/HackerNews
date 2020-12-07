@@ -13,6 +13,10 @@
 		BB74158B2578CD64000FD3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB74158A2578CD64000FD3EF /* Assets.xcassets */; };
 		BB74158E2578CD64000FD3EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB74158D2578CD64000FD3EF /* Preview Assets.xcassets */; };
 		BB7415912578CD64000FD3EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB74158F2578CD64000FD3EF /* LaunchScreen.storyboard */; };
+		BB74159B2578D30D000FD3EF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74159A2578D30D000FD3EF /* NetworkManager.swift */; };
+		BB74159F2578D462000FD3EF /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB74159E2578D462000FD3EF /* PostData.swift */; };
+		BB7415A32578EDF5000FD3EF /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7415A22578EDF5000FD3EF /* DetailView.swift */; };
+		BB7415A625790FA9000FD3EF /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7415A525790FA9000FD3EF /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,11 @@
 		BB74158D2578CD64000FD3EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BB7415902578CD64000FD3EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB7415922578CD64000FD3EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB74159A2578D30D000FD3EF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BB74159E2578D462000FD3EF /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		BB7415A22578EDF5000FD3EF /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BB7415A525790FA9000FD3EF /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		BB7415A92579176F000FD3EF /* HackerNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HackerNews.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +65,11 @@
 		BB7415832578CD62000FD3EF /* HackerNews */ = {
 			isa = PBXGroup;
 			children = (
+				BB7415A92579176F000FD3EF /* HackerNews.entitlements */,
+				BB7415A12578EDD0000FD3EF /* Views */,
+				BB7415992578D2F5000FD3EF /* Models */,
 				BB7415842578CD62000FD3EF /* AppDelegate.swift */,
 				BB7415862578CD62000FD3EF /* SceneDelegate.swift */,
-				BB7415882578CD62000FD3EF /* ContentView.swift */,
 				BB74158A2578CD64000FD3EF /* Assets.xcassets */,
 				BB74158F2578CD64000FD3EF /* LaunchScreen.storyboard */,
 				BB7415922578CD64000FD3EF /* Info.plist */,
@@ -73,6 +84,25 @@
 				BB74158D2578CD64000FD3EF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BB7415992578D2F5000FD3EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB74159A2578D30D000FD3EF /* NetworkManager.swift */,
+				BB74159E2578D462000FD3EF /* PostData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB7415A12578EDD0000FD3EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB7415882578CD62000FD3EF /* ContentView.swift */,
+				BB7415A22578EDF5000FD3EF /* DetailView.swift */,
+				BB7415A525790FA9000FD3EF /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +175,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB74159F2578D462000FD3EF /* PostData.swift in Sources */,
+				BB7415A32578EDF5000FD3EF /* DetailView.swift in Sources */,
+				BB74159B2578D30D000FD3EF /* NetworkManager.swift in Sources */,
 				BB7415852578CD62000FD3EF /* AppDelegate.swift in Sources */,
 				BB7415872578CD62000FD3EF /* SceneDelegate.swift in Sources */,
 				BB7415892578CD62000FD3EF /* ContentView.swift in Sources */,
+				BB7415A625790FA9000FD3EF /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +320,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HackerNews/HackerNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HackerNews/Preview Content\"";
 				DEVELOPMENT_TEAM = SJCTW9K775;
@@ -295,8 +331,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackerNews;
+				PRODUCT_BUNDLE_IDENTIFIER = vip.bingxiong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,6 +344,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HackerNews/HackerNews.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"HackerNews/Preview Content\"";
 				DEVELOPMENT_TEAM = SJCTW9K775;
@@ -316,8 +355,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.HackerNews;
+				PRODUCT_BUNDLE_IDENTIFIER = vip.bingxiong;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
